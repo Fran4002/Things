@@ -1,0 +1,251 @@
+/* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 4.5%;
+  width: 100%;
+  max-width: 91%;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  padding: 0.25%;
+  margin-bottom: 0.5%;
+  z-index: 3;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  flex: 1;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  margin: .05% 4.5%;
+  padding: .5%;
+  font-size: 17px;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 80%;
+  padding: 20px;
+  margin: auto;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+  .side{
+    display: none;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+
+/**/
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  /*height: auto;*/
+  min-height: 240px;
+  /*padding-bottom: 30%;*/
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-size: cover;*/
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.iframe-holder{
+  position: relative;
+  padding-top: 25px;
+  margin-bottom: 0.25%;
+}
+
+.iframe-16_9{
+  padding-bottom: 56.25%; /* 16:9 */
+}
+
+.iframe-holder iframe{
+  position: absolute;
+  top: 0;
+  /*bottom: 0;*/
+  left: 0;
+  /*right: 0;*/
+  width: 100%;
+  height: 100%;
+}
+
+.product-section{
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-section article{
+  min-width: 30%;
+  border-style: outset;
+  margin: 1.25%;
+}
+
+.price-tag {
+  width: 200px;
+  max-width: 90%;
+  height: 40px;
+  position: relative;
+  background: orange;
+}
+.price-tag:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+.price-tag:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid orange;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.lightbox {
+  width: 100%;
+
+  /* Default to hidden */
+  display: none;
+
+  /* Overlay entire screen */
+  /*position: fixed;*/
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* A bit of padding around image */
+  padding: 1em;
+
+  /* Translucent background */
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Unhide the lightbox when it's the target */
+.lightbox:target {
+  display: flex;
+}
+
+.rectangle {
+  /*visibility: hidden;*/
+  display: block;
+  /*width: 50%;*/
+  border: solid;
+  border-color: orange;
+  background: white;
+}
+
+.rectangle:hover{
+  visibility: visible;
+}
+
+.product-preview{
+  margin: auto 10%;
+}
+
+.product-preview div {
+  float: left;
+  width: 20%;
+}
+
+.box{
+  background: white;
+  border: solid;
+  /*margin: 5%;
+  /*border-width: 10px;*/
+}
